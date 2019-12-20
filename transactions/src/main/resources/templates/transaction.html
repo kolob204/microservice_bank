@@ -1,0 +1,59 @@
+<h3>Transaction Done! </h3>
+
+
+<br>
+
+
+{{#listelement}}
+<table border="1">
+    <tr>
+        <td>id</td>
+        <td>{{id}}</td>
+    </tr>
+
+    <tr>
+        <td>Направление</td>
+        <td>{{#direction}}{{.}}{{/direction}} {{^direction}}<b>null</b>{{/direction}}  </td>
+    </tr>
+
+
+    <tr>
+        <td>Источник</td>
+        <td>{{#source}}{{.}}{{/source}}{{^source}}<b>null}</b>{{/source}}</td>
+    </tr>
+    <tr>
+        <td>Сумма</td>
+        <td>{{#summ_compare}}{{.}}{{/summ_compare}}{{^summ_compare}}<b>null}</b>{{/summ_compare}} {{#summ}}{{.}}{{/summ}}{{^summ}}<b>null}</b>{{/summ}}</td>
+
+    </tr>
+
+    <tr>
+        <td>Действие</td>
+        <td>{{#action}}{{.}}{{/action}}{{^action}}<b>null</b>{{/action}}</td>
+    </tr>
+
+    <tr>
+        <td>Код Баланса</td>
+        <td>{{#code_type_of_balance}}{{.}}{{/code_type_of_balance}}{{^code_type_of_balance}}<b>null</b>{{/code_type_of_balance}}</td>
+    </tr>
+
+    <tr>
+        <td>Начальная дата действия правила</td>
+        <td>{{#start_Date}}{{.}}{{/start_Date}}{{^start_Date}}<b>null</b>{{/start_Date}}</td>
+    </tr>
+
+    <tr>
+        <td>Конечная дата действия правила</td>
+        <td>{{#end_Date}}{{.}}{{/end_Date}}{{^end_Date}}<b>null}</b>{{/end_Date}}</td>
+    </tr>
+
+</table>
+
+{{/listelement}}
+{{^listelement}} <p>NULL!</p>{{/listelement}}
+
+
+<br>
+<input action="action" type="button" onclick="history.go(-1);"   value=" Go Back "/>
+
+<br>

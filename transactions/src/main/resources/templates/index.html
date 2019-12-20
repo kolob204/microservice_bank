@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        td {
+            padding: 5px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<h1>Обработка транзакций</h1>
+
+<p> Сегодня  {{curtime}} </p>
+
+<br>
+<form method="post" action="/doTransaction">
+
+    <table >
+        <tr>
+            <td>Тип транзакции</td>
+            <td>Направление транзакции</td>
+            <td>Источник транзакции</td>
+            <td>Сумма транзакции</td>
+            <td>Валюта</td>
+            <td>Дата транзакции</td>
+        </tr>
+        <tr>
+            <td>
+                <select name="type">
+                    {{#types}}<option value="{{type}}">{{type}}</option>{{/types}}
+                </select>
+            </td>
+            <td>
+                <select name="direction">
+                    <option value="original">Оригинал</option>
+                    <option value="cancel">Отмена</option>
+                </select>
+            </td>
+            <td>
+                <select name="source">
+                    {{#sources}}<option value="{{source}}">{{source}}</option>{{/sources}}
+                </select>
+            </td>
+            <td>
+                <input type="text" name="summ" placeholder="сумма транзакции">
+            </td>
+            <td>
+                <select name="currency">
+                    <option value="d">$</option>
+                    <option title="Рубль" value="r">₽</option>
+                    <option title="Евро" value="e">€</option>
+                    <option title="Английский фунт" value="f">£</option>
+                    <option title="японская Йена" value="ie">¥</option>
+                    <option title="Китайский Юань" value="yu">元</option>
+                </select>
+            </td>
+            <td>
+                <input   title="Транзакция проводится сегодняшним днём! Любые изменения не учитываются"  type="text" name="date" placeholder="дата транзакции" value={{curtime}}>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Обработать" >
+
+</form>
+
+</body>
+</html>
