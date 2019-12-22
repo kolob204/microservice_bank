@@ -13,6 +13,7 @@ Second file: Data.sql
 it will fill some data to the tables.
 
 how to run import to Postgres DB
+
 psql \
   -h localhost \
   -p 5432 \
