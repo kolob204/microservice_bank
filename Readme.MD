@@ -22,6 +22,7 @@ psql \
   -f table.sql
 
 user - is your user access to postgres
+
 database-name - is will be "rules" here.
 
 or you can run script from Postgres PGADMIN User Interface.
